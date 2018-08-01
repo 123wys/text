@@ -1,125 +1,174 @@
 <template>
-  <div class="header" id="myHeader">
+  <div class="header">
     <div class="headBox">
-      <div class="topTxt">
-        <div class="topBar">
-          <div class="clearfix fadeInDown topTitBox">
-            <img src="./img/logo@2x.png" class="logoImg fl goIndex" title="xflow">
-            <div class="headTap clearfix">
-              <dl>
-                <dt class="goIndex">
-                  <router-link :to="{ path:'/index', query: { num:  1} }">首页</router-link>
-                </dt>
-                <!--<dd></dd>-->
-              </dl>
-              <dl style="position: static">
-                <dt>产品功能<i class="downTriangle"></i></dt>
-                <dd>
-                  <div class="productFunc">
-                    <dl>
-                      <dt><img style="width:36px;height: 29px;" src="./img/tit02.png" alt=""></dt>
-                      <dd class="clearfix">
-                        <ul>
-                          <li class="Tit">无痕埋点</li>
-                          <li>全量实时采集</li>
-                          <li>SDK自动追踪代码</li>
-                          <li class="learnMore">了解更多<i class="rightArrow"></i></li>
-                        </ul>
-                      </dd>
-                    </dl>
+      <!-- topBar -->
+      <div class="topBar">
+        <div class="clearfix fadeInDown topTitBox">
+          <img src="./img/logo@2x.png" class="logoImg fl goIndex" title="xflow">
+          <div class="headTap clearfix">
+            <dl>
+              <dt class="goIndex">
+                <router-link :to="{ path:'/index' }">首页</router-link>
+              </dt>
+              <!--<dd></dd>-->
+            </dl>
+            <dl style="position: static">
+              <dt>产品功能
+                <i class="downTriangle"></i>
+              </dt>
+              <dd>
+                <div class="productFunc">
+                  <dl>
+                    <dt><img style="width:36px;height: 29px;" src="./img/tit02.png" alt=""></dt>
+                    <dd class="clearfix">
+                      <ul>
+                        <li class="Tit">无痕埋点</li>
+                        <li>全量实时采集</li>
+                        <li>SDK自动追踪代码</li>
+                        <li class="learnMore" v-on:click="learnMore('wuhenmaidian')">了解更多
+                          <i class="rightArrow"></i>
+                        </li>
+                      </ul>
+                    </dd>
+                  </dl>
 
-                    <dl>
-                      <dt><img style="width:32px;height: 32px;" src="./img/tit01.png" alt=""></dt>
-                      <dd class="clearfix">
-                        <ul>
-                          <li class="Tit">多维分析</li>
-                          <li>多种可视化报表</li>
-                          <li>多维度指标分析</li>
-                          <li>数据化运营分析体系</li>
-                          <li class="learnMore">了解更多<i class="rightArrow"></i></li>
-                        </ul>
-                      </dd>
-                    </dl>
+                  <dl>
+                    <dt><img style="width:32px;height: 32px;" src="./img/tit01.png" alt=""></dt>
+                    <dd class="clearfix">
+                      <ul>
+                        <li class="Tit">多维分析</li>
+                        <li>多种可视化报表</li>
+                        <li>多维度指标分析</li>
+                        <li>数据化运营分析体系</li>
+                        <li class="learnMore" v-on:click="learnMore('duoweiduzhibiao')">了解更多
+                          <i class="rightArrow"></i>
+                        </li>
+                      </ul>
+                    </dd>
+                  </dl>
 
-                    <dl>
-                      <dt><img style="width:32px;height: 28px;" src="./img/tit03.png" alt=""></dt>
-                      <dd class="clearfix">
-                        <ul>
-                          <li class="Tit">智能分析</li>
-                          <li>智能漏斗分析</li>
-                          <li>智能路径分析</li>
-                          <li>实时大屏分析</li>
-                          <li class="learnMore">了解更多<i class="rightArrow"></i></li>
-                        </ul>
-                      </dd>
-                    </dl>
+                  <dl>
+                    <dt><img style="width:32px;height: 28px;" src="./img/tit03.png" alt=""></dt>
+                    <dd class="clearfix">
+                      <ul>
+                        <li class="Tit">智能分析</li>
+                        <li>智能漏斗分析</li>
+                        <li>智能路径分析</li>
+                        <li>实时大屏分析</li>
+                        <li class="learnMore" v-on:click="learnMore('zhinengloudou')">了解更多
+                          <i class="rightArrow"></i>
+                        </li>
+                      </ul>
+                    </dd>
+                  </dl>
 
-                    <dl>
-                      <dt><img style="width:31px;height: 30px;" src="./img/tit04.png" alt=""></dt>
-                      <dd class="clearfix">
-                        <ul>
-                          <li class="Tit">用户洞察</li>
-                          <li>用户属性信息</li>
-                          <li>用户行为轨迹</li>
-                          <li>用户操作日志</li>
-                          <li>用户留存分析</li>
-                          <li class="learnMore">了解更多<i class="rightArrow"></i></li>
-                        </ul>
-                      </dd>
-                    </dl>
+                  <dl>
+                    <dt><img style="width:31px;height: 30px;" src="./img/tit04.png" alt=""></dt>
+                    <dd class="clearfix">
+                      <ul>
+                        <li class="Tit">用户洞察</li>
+                        <li>用户属性信息</li>
+                        <li>用户行为轨迹</li>
+                        <li>用户操作日志</li>
+                        <li>用户留存分析</li>
+                        <li class="learnMore" v-on:click="learnMore('yonghudongcha')">了解更多
+                          <i class="rightArrow"></i>
+                        </li>
+                      </ul>
+                    </dd>
+                  </dl>
 
-                    <dl>
-                      <dt><img style="width:30px;height: 31px;" src="./img/tit05.png" alt=""></dt>
-                      <dd class="clearfix">
-                        <ul>
-                          <li class="Tit">监控预警</li>
-                          <li>APP性能监控分析</li>
-                          <li>错误日志监控</li>
-                          <li>自定义监控预警</li>
-                          <li class="learnMore">了解更多<i class="rightArrow"></i></li>
-                        </ul>
-                      </dd>
-                    </dl>
-                  </div>
-                </dd>
-              </dl>
-              <dl>
-                <dt>解决方案<i class="downTriangle"></i></dt>
-                <dd>
-                  <ul class="solution">
-                    <li id="goSolution" style="cursor:pointer">互联网保险行业</li>
-                    <!--<li>互联网金融行业</li>-->
-                    <!--<li>电商行业</li>-->
-                  </ul>
-                </dd>
-              </dl>
-              <dl>
-                <dt id="aboutUs" style="cursor:pointer">关于我们</dt>
-                <!--<dd></dd>-->
-              </dl>
-              <dl>
-                <dt id="contactUs" style="cursor:pointer">联系我们</dt>
-                <!--<dd></dd>-->
-              </dl>
-            </div>
-            <div class="fr linkBox">
-              <a href="/webflow/login.html" title="登录" class="loginBtn"></a>
-              <a class="help" href="/assist/help" title="帮助中心">帮助中心</a>
-            </div>
+                  <dl>
+                    <dt><img style="width:30px;height: 31px;" src="./img/tit05.png" alt=""></dt>
+                    <dd class="clearfix">
+                      <ul>
+                        <li class="Tit">监控预警</li>
+                        <li>APP性能监控分析</li>
+                        <li>错误日志监控</li>
+                        <li>自定义监控预警</li>
+                        <li class="learnMore" v-on:click="learnMore('jiankongyujing')">了解更多
+                          <i class="rightArrow"></i>
+                        </li>
+                      </ul>
+                    </dd>
+                  </dl>
+                </div>
+              </dd>
+            </dl>
+            <dl>
+              <dt>解决方案
+                <i class="downTriangle"></i>
+              </dt>
+              <dd>
+                <ul class="solution">
+                  <li id="goSolution" style="cursor:pointer">
+                    <router-link :to="{ path:'/solution'}">互联网保险行业</router-link>
+                  </li>
+                  <!--<li>互联网金融行业</li>-->
+                  <!--<li>电商行业</li>-->
+                </ul>
+              </dd>
+            </dl>
+            <dl>
+              <dt id="aboutUs" style="cursor:pointer">
+                <router-link :to="{ path:'/aboutUs'}">关于我们</router-link>
+              </dt>
+              <!--<dd></dd>-->
+            </dl>
+            <dl>
+              <dt id="contactUs" style="cursor:pointer">
+                <router-link :to="{ path:'/contactUs'}">联系我们</router-link>
+              </dt>
+              <!--<dd></dd>-->
+            </dl>
+          </div>
+          <div class="fr linkBox">
+            <span v-on:click="goLogin" title="登录" class="loginBtn"></span>
+            <a class="help" href="/assist/help" title="帮助中心">帮助中心</a>
           </div>
         </div>
-        <slot name="centerTxt"></slot>
-        <slot name="freeTryBtn"></slot>
       </div>
-      <slot name='bg1'></slot>
-      <slot name='bg2'></slot>
+
+      <!-- 轮播 -->
+      <el-carousel height="700px" class="carousel" :interval="5000" v-if="isShowCarousel">
+        <el-carousel-item v-for="item in carouselList" :key="item">
+          <slot :name="item"></slot>
+        </el-carousel-item>
+      </el-carousel>
+      <!-- slots -->
+      <div class="texts">
+
+      </div>
+      <slot name="centerTxt"></slot>
+      <slot name="txtDetail"></slot>
+      <slot name="freeTryBtn"></slot>
+      <slot name="rightHeaderTxt"></slot>
+      <slot name="sol-centerTxt"></slot>
+      <slot name="contactForm"></slot>
+      <slot name="sol-freeTryBtn"></slot>
+      <slot name='bg'></slot>
     </div>
-    <!--<div class="wave fadeInUp"></div>-->
+    <slot name='bg2'></slot>
   </div>
 </template>
 <script type="text/ecmascript-6">
+import { Cookie } from "../../config/mUtils";
 export default {
   name: "indexHeader",
+  props: {
+    isShowCarousel: {
+      //每一列标题
+      type: Boolean,
+      default: false
+    },
+    carouselList: {
+      //每一列标题
+      type: Array,
+      default() {
+        return ["carousel1", "carousel2"];
+      }
+    }
+  },
   data() {
     return {};
   },
@@ -165,11 +214,56 @@ export default {
       }
     });
   },
-  methods: {}
+  methods: {
+    learnMore(id) {
+      if (this.$route.path != "/index") {
+        id && this.$router.push({ path: "index", query: { learnMore: id } });
+        return;
+      }
+      id && $(window).scrollTop(document.getElementById(id).offsetTop - 50);
+    },
+    goLogin(id) {
+      const isAutoLogin = Cookie.getCookie(this.$store.state.userSid);
+      if (!!isAutoLogin) {
+        this.$router.push({ path: "systemIndex" });
+      } else {
+        this.$router.push({ path: "login" });
+      }
+    }
+  }
 };
 </script>
+<style lang="scss" scoped>
+.carousel /deep/ .el-carousel__arrow--left {
+  left: 380px;
+}
 
-<style lang="scss" rel="stylesheet/scss" scoped>
+.carousel /deep/ .el-carousel__arrow--right {
+  right: 380px;
+}
+
+.carousel /deep/ .el-icon-arrow-left:before,
+.carousel /deep/ .el-icon-arrow-right:before {
+  color: rgba(255, 255, 255, 0.685);
+}
+
+.carousel /deep/ .el-carousel__arrow {
+  background-color: rgba(179, 182, 185, 0.31);
+}
+
+.carousel /deep/ .el-carousel__arrow:hover {
+  background-color: rgba(179, 182, 185, 0.41);
+}
+
+.carousel {
+  height: 700px;
+  background: #010b24;
+  .bannerImg {
+    width: 1920px;
+    height: 700px;
+  }
+}
+
 .header {
   position: relative;
   margin: 0 auto;
@@ -180,8 +274,24 @@ export default {
 }
 
 .header .headBox {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 1920px;
+  height: 100%;
+  margin-left: -960px;
+  z-index: 9;
+}
+
+.header .topBar {
+  position: fixed;
+  top: 0;
+  left: 0;
   width: 100%;
-  height: 700px;
+  height: 50px;
+  background: transparent;
+  transition: all 0.5s ease-in-out;
+  z-index: 999999;
 }
 
 .header .headBox .logoImg {
@@ -231,6 +341,7 @@ export default {
   height: 25px;
   background: url("./img/loginBtn@2x.png") no-repeat center center;
   background-size: 100% 100%;
+  cursor: pointer;
 }
 
 .header .headBox .linkBox .loginBtn:hover {
@@ -240,8 +351,13 @@ export default {
 }
 
 .header .topTxt {
-  position: relative;
-  z-index: 9;
+  // position: relative;
+  // z-index: 9;
+
+      height: 500px;
+    width: 1148px;
+    margin: 0 auto;
+    position: relative;
 }
 
 .header .headTap {
@@ -250,6 +366,11 @@ export default {
   margin: 37px 0 0 52px;
   color: #fff;
   transition: all 0.5s ease-in-out;
+}
+
+.header .headTap a {
+  color: #fff;
+  font: normal 14px/19px "microsoft yahei";
 }
 
 .header .headTap > dl {
@@ -354,6 +475,9 @@ export default {
 
 .header .headTap .solution li:hover {
   color: #239dd7;
+  a {
+    color: #239dd7;
+  }
 }
 
 .header .headTap .solution li:hover:after {

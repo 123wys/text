@@ -8,12 +8,12 @@
  */
 
 let baseUrl = '';
-let routerMode = 'history';
+let routerMode = 'hash';
 
 if (process.env.NODE_ENV == 'development') {
   // baseUrl = 'http://10.139.58.51:60740';
 }else if(process.env.NODE_ENV == 'production'){
-	baseUrl = 'https://xflow.zhongan.io';
+	baseUrl = '';
 }
 
 export {
